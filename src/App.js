@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import UnitMaker from "./components/UnitMaker";
 
 function App() {
+  const Unit = {
+    nickname: "Silver Knight",
+    name: "Seth",
+    weaponType: "Sword",
+    moveType: "Cavalry",
+    merges: 10,
+    df : 5,
+    stats : {
+      HP: 52,
+      Atk: 55,
+      Spd: 38,
+      Def: 46,
+      Res: 29
+    },
+    skills : {
+      weapon: "Silverbrand",
+      assist: "Swap",
+      special: "Blue Flame",
+      skillA: "Atk/Def Bond 3",
+      skillB: "Cancel Affinity 3",
+      skillC: "Atk Smoke 3",
+      seal: "Atk/Def Bond 3",
+    },
+    rarity: 5,
+    voice_actor: "Chris Smith",
+    illustrator: "Fujiwara Ryo (冨士原良)"
+
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // <UnitCanvas/>
+    <div>
+      {/* <TestKonva df={true}/> */}
+      <UnitMaker
+        name={Unit.name}
+        nickname={Unit.nickname}
+        df = {Unit.df}
+        merges={Unit.merges}
+        stats={Unit.stats}
+        // skills={Object.values(Unit.skills)}
+      />
     </div>
   );
 }
